@@ -28,7 +28,7 @@ const addImageWatermarkToImage = async function(inputFile, outputFile, watermark
 
 const prepareOutputFilename = (filename) => {
   const [ name, ext] = filename.split('.');
-  return `${name}-with-text-watermark.${ext}`;
+  return `${name}-with-watermark.${ext}`;
 }
 
 // TESTED: a code below works correctly and render various filenames,
