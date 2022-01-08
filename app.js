@@ -84,8 +84,6 @@ const startApp = async () => {
       addTextWatermarkToImage('./img/' + options.inputImage, './img/' + prepareOutputTextWatermarkFilename(options.inputImage), options.watermarkText);
       console.log('Congratulations!!! Mission impossible is accomplished ')
 
-      startApp();
-
     } else {
       console.log('Something went wrong... Try again!');
     };
@@ -100,16 +98,16 @@ const startApp = async () => {
     }]);
     options.watermarkImage = image.filename;
 
-    if (fs.existsSync(('./img/' + options.inputImage) && ('./img/' + options.watermarkImage))) {
+    if (fs.existsSync('./img/' + options.inputImage) && fs.existsSync('./img/' + options.watermarkImage)) {
       addImageWatermarkToImage('./img/' + options.inputImage, './img/' + prepareOutputImageWatermarkFilename(options.inputImage), './img/' + options.watermarkImage);
       console.log('You are the best!!!')
-
-      startApp();
 
     } else {
       console.log('Something went wrong... Try again!');
     };
   }
+
+  startApp();
 }
 
 
